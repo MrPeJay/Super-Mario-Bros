@@ -367,7 +367,7 @@ public class Player : MonoBehaviour {
                 StartCoroutine(Blink(SuperGrown, Grown, true));
             }
         }
-
+        ResetColor();
         MusicController.PlayClipAt(PowerUp,transform.position);
     }
 
@@ -500,6 +500,7 @@ public class Player : MonoBehaviour {
                 growFrom.SetActive(true);
                 animator = growFrom.GetComponent<Animator>();
                 renderer = growFrom.GetComponent<SpriteRenderer>();
+                ResetColor();
                 blinked = false;
             }
             else
@@ -508,6 +509,7 @@ public class Player : MonoBehaviour {
                 growFrom.SetActive(false);
                 animator = growTo.GetComponent<Animator>();
                 renderer = growTo.GetComponent<SpriteRenderer>();
+                ResetColor();
                 blinked = true;
             }
             iteration++;
